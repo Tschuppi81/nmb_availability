@@ -83,16 +83,61 @@ def get_villas(url):
     return villas
 
 
+def print_availablitly_results(villas):
+    """
+    Print the availability results. The format is like the following:
+    #            | month 1 | month 2 | ..
+    # villa  1   |         |         | ..
+    # villa  2   |         |         | ..
+    # ..         |         |         | ..
+    """
+
+    # Get unique months
+    unique_months = list()
+    for villa in villas:
+        for month in villa["months"]:
+            unique_months.append(month["month_name"])
+        break
+
+    # Print the header
+    header = "| {:<30} |".format('Villa')
+    sep_line = "+ {:<30} +".format('-' * 30)
+    for month in unique_months:
+        header += " {:>14} |".format(month)
+        sep_line += " {:>14} +".format('-' * 14)
+
+    print(sep_line)
+    print(header)
+    print(sep_line)
+
+    # Print villa blocked days for each month
+    for villa in villas:
+        villa_line = "| {:<30} |".format(villa["name"][:30])
+        for month in unique_months:
+            for data in villa["months"]:
+                if data["month_name"] == month:
+                    if 'percentage_blocked' in data:
+                        val = round(data["percentage_blocked"], 1)
+                        villa_line += " {:>14.1f} |".format(val)
+                    else:
+                        villa_line += " {:>14} |".format('-')
+                    break
+            else:
+                # month is not present
+                villa_line += " {:>14} |".format('+')  # If data for the
+        print(villa_line)
+
+    print(sep_line)
+
+
 if __name__ == "__main__":
     villas = []
 
-    main_page = ("https://www.nmbfloridavacationrentals.com/all-vacation"
-                 "-rentals")
-    for villa in get_villas(main_page):
+    url = ("https://www.nmbfloridavacationrentals.com/all-vacation-rentals")
+    for villa in get_villas(url):
         villa['months'] = []
 
         print(f'\n{villa["name"]}')
-
         for month_str, blocked_days in (
                 get_available_and_blocked_days(villa['url'])):
             total_days_month = get_month_days(month_str.split(' ')[1],
@@ -114,8 +159,4 @@ if __name__ == "__main__":
 
         villas.append(villa)
 
-    print('\n------------')
-    print(villas)
-    #            | dez 2023 | jan 2024 | ..
-    # villa  1   |          |          | ..
-    # villa  2   |          |          | ..
+    print_availablitly_results(villas)
