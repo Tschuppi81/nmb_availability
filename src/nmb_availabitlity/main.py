@@ -49,13 +49,9 @@ def get_available_and_blocked_days(url):
     calendar_wrapper = soup.find(id='fwre-item-calendar-wrapper')
     for month in calendar_wrapper.find_all('table'):
         month_str = month.find('th').text
-        # print(month_str)
         booked_days_elements = month.find_all(class_=booked)
         checkin_days_elements = month.find_all(class_=checkin)
         checkout_days_elements = month.find_all(class_=checkout)
-        # print(f' Booked: {len(booked_days_elements)}')
-        # print(f' Checkin: {len(checkin_days_elements)}')
-        # print(f' Checkout: {len(checkout_days_elements)}')
         blocked_days = (len(booked_days_elements) +
                         len(checkin_days_elements) +
                         len(checkout_days_elements))
