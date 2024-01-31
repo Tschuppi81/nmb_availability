@@ -3,12 +3,13 @@ import requests
 
 from bs4 import BeautifulSoup
 
+from src.nmb_availabitlity.intervillas import get_intervillas, \
+    get_available_and_blocked_days_intervillas
+
 # css classes for booking state
 booked = 'fwre-booking-active'
 checkin = 'checkin'
 checkout = 'checkout'
-
-
 # available = no class
 
 
@@ -161,11 +162,33 @@ if __name__ == "__main__":
                 'percentage_blocked': percentage_blocked
             }
             villa['months'].append(month)
-            # print(f'  {month_str}')
-            # print(f'    Booked: {blocked_days}')
-            # print(f'    Available: {available_days}')
-            # print(f'    Percentage of Blocked Days: {percentage_blocked:.2f}%')
 
         villas.append(villa)
 
-    print_availablitly_results(villas)
+    print_availability_results(villas)
+
+    intervillas = []
+    print('--- Analyzing Intervillas ---')
+    url = "https://www.intervillas-florida.com/ferienhaus-cape-coral"
+    for villa in get_intervillas(url):
+        villa['months'] = []
+
+        print(f'{villa["name"]}')
+        for month_str, blocked_days in (
+                get_available_and_blocked_days_intervillas(villa['url'])):
+            total_days_month = get_month_days(month_str.split(' ')[1],
+                                              month_str.split(' ')[0])
+            available_days = total_days_month - blocked_days
+            percentage_blocked = calculate_percentage_blocked(blocked_days,
+                                                              total_days_month)
+            month = {
+                'month_name': month_str,
+                'available_days': available_days,
+                'blocked_days': blocked_days,
+                'percentage_blocked': percentage_blocked
+            }
+            villa['months'].append(month)
+
+        intervillas.append(villa)
+
+    print_availability_results(intervillas)
