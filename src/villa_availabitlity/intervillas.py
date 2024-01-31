@@ -9,6 +9,9 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from src.villa_availabitlity.common import get_month_days, \
+    calculate_percentage_blocked
+
 options = Options()
 options.headless = True
 options.add_argument("--window-size=1920,1200")
@@ -34,8 +37,8 @@ def get_intervillas(url):
         villas.append(villa)
 
         # for testing
-        # if len(villas) > 5:
-        #     break
+        if len(villas) > 5:
+            break
 
     print(f'Found {len(villas)} villas')
     return sorted(villas, key=lambda v: v['name'])
@@ -81,3 +84,30 @@ def get_available_and_blocked_days_intervillas(url):
 
         yield month_str, nbr_of_full_days_blocked + nbr_of_checkins
         button_next_month.click()
+
+
+def scrape_intervillas():
+    url = "https://www.intervillas-florida.com/ferienhaus-cape-coral"
+    intervillas = []
+    for villa in get_intervillas(url):
+        villa['months'] = []
+
+        print(f'{villa["name"]}')
+        for month_str, blocked_days in (
+                get_available_and_blocked_days_intervillas(villa['url'])):
+            total_days_month = get_month_days(month_str.split(' ')[1],
+                                              month_str.split(' ')[0])
+            available_days = total_days_month - blocked_days
+            percentage_blocked = calculate_percentage_blocked(blocked_days,
+                                                              total_days_month)
+            month = {
+                'month_name': month_str,
+                'available_days': available_days,
+                'blocked_days': blocked_days,
+                'percentage_blocked': percentage_blocked
+            }
+            villa['months'].append(month)
+
+        intervillas.append(villa)
+
+    return intervillas
