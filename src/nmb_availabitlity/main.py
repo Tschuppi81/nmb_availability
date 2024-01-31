@@ -18,6 +18,7 @@ def get_month_days(year, month):
         'feb': 2,
         'mar': 3,
         'apr': 4,
+        'mai': 5,
         'may': 5,
         'jun': 6,
         'jul': 7,
@@ -49,12 +50,15 @@ def get_available_and_blocked_days(url):
     calendar_wrapper = soup.find(id='fwre-item-calendar-wrapper')
     for month in calendar_wrapper.find_all('table'):
         month_str = month.find('th').text
+        total_days_month = get_month_days(month_str.split(' ')[1],
+                                          month_str.split(' ')[0])
         booked_days_elements = month.find_all(class_=booked)
         checkin_days_elements = month.find_all(class_=checkin)
         checkout_days_elements = month.find_all(class_=checkout)
+        available_days_elements = month.find_all('td', class_=None)
         blocked_days = (len(booked_days_elements) +
-                        len(checkin_days_elements) +
-                        len(checkout_days_elements))
+                        len(checkin_days_elements)) #+
+                        # len(checkout_days_elements))
 
         yield month_str, blocked_days
 
@@ -63,7 +67,7 @@ def calculate_percentage_blocked(blocked_days, total_days):
     return (blocked_days / total_days) * 100
 
 
-def get_villas(url):
+def get_nmb_villas(url):
     villas = []
 
     base_url, rel_url = url.rsplit('/', 1)
@@ -79,11 +83,15 @@ def get_villas(url):
         villa['url'] = base_url + v.find('a')['href']
         villas.append(villa)
 
+        # for testing
+        # if len(villas) > 5:
+        #     break
+
     print(f'Found {len(villas)} villas')
     return villas
 
 
-def print_availablitly_results(villas):
+def print_availability_results(villas):
     """
     Print the availability results. The format is like the following:
     #            | month 1 | month 2 | ..
@@ -133,11 +141,12 @@ def print_availablitly_results(villas):
 if __name__ == "__main__":
     villas = []
 
-    url = ("https://www.nmbfloridavacationrentals.com/all-vacation-rentals")
-    for villa in get_villas(url):
+    print('--- Analyzing NMB ---')
+    url = "https://www.nmbfloridavacationrentals.com/all-vacation-rentals"
+    for villa in get_nmb_villas(url):
         villa['months'] = []
 
-        print(f'\n{villa["name"]}')
+        print(f'{villa["name"]}')
         for month_str, blocked_days in (
                 get_available_and_blocked_days(villa['url'])):
             total_days_month = get_month_days(month_str.split(' ')[1],
@@ -152,10 +161,10 @@ if __name__ == "__main__":
                 'percentage_blocked': percentage_blocked
             }
             villa['months'].append(month)
-            print(f'  {month_str}')
-            print(f'    Booked: {blocked_days}')
-            print(f'    Available: {available_days}')
-            print(f'    Percentage of Blocked Days: {percentage_blocked:.2f}%')
+            # print(f'  {month_str}')
+            # print(f'    Booked: {blocked_days}')
+            # print(f'    Available: {available_days}')
+            # print(f'    Percentage of Blocked Days: {percentage_blocked:.2f}%')
 
         villas.append(villa)
 
