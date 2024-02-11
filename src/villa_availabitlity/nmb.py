@@ -73,6 +73,11 @@ def scrape_nmb():
             }
             villa['months'].append(month)
 
+        # calculate average percentage blocked
+        villa['average_percentage_blocked'] = sum(
+            [month['percentage_blocked'] for month in villa['months']]) / len(
+            villa['months'])
+
         villas.append(villa)
 
     return villas

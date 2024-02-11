@@ -53,6 +53,8 @@ def print_availability_results(villas):
     for month in unique_months:
         header += " {:>14} |".format(month)
         sep_line += " {:>14} +".format('-' * 14)
+    header += " {:>14} |".format('Average')
+    sep_line += " {:>14} +".format('-' * 14)
 
     print(sep_line)
     print(header)
@@ -73,6 +75,8 @@ def print_availability_results(villas):
             else:
                 # month is not present
                 villa_line += " {:>14} |".format('+')  # If data for the
+        # print average percentage blocked for the villa
+        villa_line += " {:>14.1f} |".format(villa["average_percentage_blocked"])
         print(villa_line)
 
     print(sep_line)
