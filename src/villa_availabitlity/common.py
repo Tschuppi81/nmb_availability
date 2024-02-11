@@ -1,7 +1,8 @@
 import calendar
+from typing import Union
 
 
-def get_month_days(year, month):
+def get_month_days(year: Union[int, str], month: Union[int, str]) -> int:
     month_map = {
         'jan': 1,
         'feb': 2,
@@ -27,11 +28,11 @@ def get_month_days(year, month):
     return last_day
 
 
-def calculate_percentage_blocked(blocked_days, total_days):
+def calculate_percentage_blocked(blocked_days: int, total_days: int) -> float:
     return (blocked_days / total_days) * 100
 
 
-def print_availability_results(villas):
+def print_availability_results(villas: list[dict]) -> None:
     """
     Print the availability results. The format is like the following:
     #            | month 1 | month 2 | ..

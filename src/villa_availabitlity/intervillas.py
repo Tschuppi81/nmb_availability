@@ -20,7 +20,7 @@ driver = webdriver.Chrome(
     options=options, service=Service('/usr/bin/chromedriver'))
 
 
-def get_intervillas(url):
+def get_intervillas(url) -> list[dict]
     villas = []
 
     base_url, rel_url = url.rsplit('/', 1)
@@ -44,7 +44,7 @@ def get_intervillas(url):
     return sorted(villas, key=lambda v: v['name'])
 
 
-def get_available_and_blocked_days_intervillas(url):
+def get_available_and_blocked_days_intervillas(url) -> tuple[str, int]
     month_str = ''
 
     # Navigate to the URL with JavaScript rendering
@@ -86,7 +86,7 @@ def get_available_and_blocked_days_intervillas(url):
         button_next_month.click()
 
 
-def scrape_intervillas():
+def scrape_intervillas() -> list[dict]:
     url = "https://www.intervillas-florida.com/ferienhaus-cape-coral"
     intervillas = []
     for villa in get_intervillas(url):
