@@ -6,7 +6,7 @@ from src.villa_availabitlity.common import get_month_days, \
     calculate_percentage_blocked
 
 
-def get_available_and_blocked_days(url) -> tuple[str, int]
+def get_available_and_blocked_days(url) -> tuple[str, int]:
     # Fetch HTML content
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -27,7 +27,7 @@ def get_available_and_blocked_days(url) -> tuple[str, int]
         yield month_str, blocked_days
 
 
-def get_nmb_villas(url) -> list[dict]
+def get_nmb_villas(url) -> list[dict]:
     villas = []
 
     base_url, rel_url = url.rsplit('/', 1)
@@ -51,7 +51,7 @@ def get_nmb_villas(url) -> list[dict]
     return villas
 
 
-def scrape_nmb() -> list[dict]
+def scrape_nmb() -> list[dict]:
     url = "https://www.nmbfloridavacationrentals.com/all-vacation-rentals"
     villas = []
     for villa in get_nmb_villas(url):
