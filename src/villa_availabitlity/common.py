@@ -93,3 +93,23 @@ def print_availability_results(villas: list[dict]) -> None:
         print(villa_line)
 
     print(sep_line)
+
+
+print("""
+TTTTTTTTTTTTTTTTTTTTTTTSSSSSSSSSSSSSSSS   CCCCCCCCCCCCCCHHHHHHHHH     HHHHHHHHH     UUUUUUUU     UUUUUUUUPPPPPPPPPPPPPPPPP   PPPPPPPPPPPPPPPPP   IIIIIIIII
+T:::::::::::::::::::::TS:::::::::::::::::::::C:::::::::::::::::::::CH:::::::H     H:::::::H     U::::::U     U::::::UP::::::::::::::::P  P::::::::::::::::P  I::::::::I
+T:::::::::::::::::::::TS::::::SSSSSS:::::S:::::C:::::::CH:::::::H     H:::::::H     U::::::U     U::::::UP::::::PPPPPP:::P  P::::::PPPPPP:::P  I::::::::I
+T:::::TT:::::::TT:::::TSSSSSSS     S:::::S   CCC:::::::CHH::::::H     H::::::HH     UU:::::U     U:::::UUPP:::::P     P:::::P  PP:::::P     P:::::P  II::::::II
+TTTTTT  T:::::T  TTTTTT  S:::::S            C:::::C       C:::::CH::::::HHHHH::::::H      U:::::U     U:::::U   P::::P     P:::::P    P::::P     P:::::P    I::::I  
+        T:::::T          S:::::S           C:::::C              H:::::::::::::::::H       U:::::D     D:::::U   P::::P     P:::::P    P::::P     P:::::P    I::::I  
+        T:::::T           S::::SSSS       C:::::C              H:::::::::::::::::H       U:::::D     D:::::U   P::::PPPPPP:::::P     P::::PPPPPP:::::P     I::::I  
+        T:::::T            SS::::::SSSSS  C:::::C              H::::::HHHHH::::::H       U:::::D     D:::::U   P:::::::::::::PP      P:::::::::::::PP      I::::I  
+        T:::::T              SSS::::::::SSC:::::C              H:::::::H     H:::::::H     U:::::D     D:::::U   P::::PPPPPPPPP        P::::PPPPPPPPP        I::::I  
+        T:::::T                 SSSSSS::::SC:::::C              H:::::::H     H:::::::H     U:::::D     D:::::U   P::::P                P::::P                I::::I  
+        T:::::T                      S:::::SC:::::C              H:::::::H     H:::::::H     U:::::D     D:::::U   P::::P                P::::P                I::::I  
+        T:::::T                      S:::::S C:::::C       C:::::CH:::::::H     H:::::::H     U::::::U   U::::::U   P::::P                P::::P                I::::I  
+      TT:::::::TT    SSSSSSS     S:::::S   CCC:::::::CHH::::::H     H::::::HH     U:::::::UUU:::::::U   P::::P                P::::P              II::::::II
+      T:::::::::T    S::::::SSSSSS:::::S:::::C:::::::CH:::::::H     H:::::::H      U:::::::::::::::UU    P::::P                P::::P            I::::::::I
+      T:::::::::T    S:::::::::::::::SS C:::::::::::::::::::::CH:::::::H     H:::::::H       U:::::::::::::::U     P::::P                P::::P            I::::::::I
+      TTTTTTTTTTT     SSSSSSSSSSSSSSS   CCCCCCCCCCCCCCHHHHHHHHH     HHHHHHHHH       UUUUUUUUU     UUUUUUUUPPPPPPPPPP            PPPPPPPPPP          IIIIIIIIII
+""")

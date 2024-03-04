@@ -37,8 +37,8 @@ def get_intervillas(url) -> list[dict]:
         villas.append(villa)
 
         # for testing
-        if len(villas) > 5:
-            break
+        # if len(villas) > 5:
+        #     break
 
     print(f'Found {len(villas)} villas')
     return sorted(villas, key=lambda v: v['name'])

@@ -42,8 +42,8 @@ def get_nmb_villas(url) -> list[dict]:
         villas.append(villa)
 
         # for testing
-        if len(villas) > 5:
-            break
+        # if len(villas) > 5:
+        #     break
 
     print(f'Found {len(villas)} villas')
     return villas
