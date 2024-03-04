@@ -1,0 +1,275 @@
+/usr/bin/python3.10 /home/reto/workspace/villa_availability/src/villa_availabitlity/main.py
+
+TTTTTTTTTTTTTTTTTTTTTTTSSSSSSSSSSSSSSSS   CCCCCCCCCCCCCCHHHHHHHHH     HHHHHHHHH     UUUUUUUU     UUUUUUUUPPPPPPPPPPPPPPPPP   PPPPPPPPPPPPPPPPP   IIIIIIIII
+T:::::::::::::::::::::TS:::::::::::::::::::::C:::::::::::::::::::::CH:::::::H     H:::::::H     U::::::U     U::::::UP::::::::::::::::P  P::::::::::::::::P  I::::::::I
+T:::::::::::::::::::::TS::::::SSSSSS:::::S:::::C:::::::CH:::::::H     H:::::::H     U::::::U     U::::::UP::::::PPPPPP:::P  P::::::PPPPPP:::P  I::::::::I
+T:::::TT:::::::TT:::::TSSSSSSS     S:::::S   CCC:::::::CHH::::::H     H::::::HH     UU:::::U     U:::::UUPP:::::P     P:::::P  PP:::::P     P:::::P  II::::::II
+TTTTTT  T:::::T  TTTTTT  S:::::S            C:::::C       C:::::CH::::::HHHHH::::::H      U:::::U     U:::::U   P::::P     P:::::P    P::::P     P:::::P    I::::I
+        T:::::T          S:::::S           C:::::C              H:::::::::::::::::H       U:::::D     D:::::U   P::::P     P:::::P    P::::P     P:::::P    I::::I
+        T:::::T           S::::SSSS       C:::::C              H:::::::::::::::::H       U:::::D     D:::::U   P::::PPPPPP:::::P     P::::PPPPPP:::::P     I::::I
+        T:::::T            SS::::::SSSSS  C:::::C              H::::::HHHHH::::::H       U:::::D     D:::::U   P:::::::::::::PP      P:::::::::::::PP      I::::I
+        T:::::T              SSS::::::::SSC:::::C              H:::::::H     H:::::::H     U:::::D     D:::::U   P::::PPPPPPPPP        P::::PPPPPPPPP        I::::I
+        T:::::T                 SSSSSS::::SC:::::C              H:::::::H     H:::::::H     U:::::D     D:::::U   P::::P                P::::P                I::::I
+        T:::::T                      S:::::SC:::::C              H:::::::H     H:::::::H     U:::::D     D:::::U   P::::P                P::::P                I::::I
+        T:::::T                      S:::::S C:::::C       C:::::CH:::::::H     H:::::::H     U::::::U   U::::::U   P::::P                P::::P                I::::I
+      TT:::::::TT    SSSSSSS     S:::::S   CCC:::::::CHH::::::H     H::::::HH     U:::::::UUU:::::::U   P::::P                P::::P              II::::::II
+      T:::::::::T    S::::::SSSSSS:::::S:::::C:::::::CH:::::::H     H:::::::H      U:::::::::::::::UU    P::::P                P::::P            I::::::::I
+      T:::::::::T    S:::::::::::::::SS C:::::::::::::::::::::CH:::::::H     H:::::::H       U:::::::::::::::U     P::::P                P::::P            I::::::::I
+      TTTTTTTTTTT     SSSSSSSSSSSSSSS   CCCCCCCCCCCCCCHHHHHHHHH     HHHHHHHHH       UUUUUUUUU     UUUUUUUUPPPPPPPPPP            PPPPPPPPPP          IIIIIIIIII
+
+Loading data from file
+--- Analyzing NMB ---
+Found 53 villas
+Luxusvilla Caloo
+Luxury Villa Madison Garden
+Luxusvilla Horizon
+Villa Next Generation
+Villa River Pearl - direct river location - a boater's dream
+Villa Infinity
+Villa Dakota
+Luxury Villa Silversands
+Villa Athene
+Villa Lumina
+Villa Mayflower
+Villa Genesis
+Villa Ruby Sunset
+Villa Sweet Greta
+Villa Summerwind
+Villa Winking Owl - available from May 01st, 2024
+Villa Skyshine
+Villa Long Island
+Villa Henderson
+Villa Pura Vida
+Villa Cape Royal
+Villa Clifton Bay
+Villa Neo
+Villa Hummingbird
+Villa Pelican Bay
+Villa White Shell
+Villa Bon Voyage
+Villa Sea Shell
+Villa Maverick
+Villa Living Coral
+Villa Royal Residence
+Villa Bella Luna
+Villa Pink Lemonade
+Villa Whispering Palms
+Villa Harbour View
+Villa Next Level
+Villa Aquamarine
+Villa Sunshine
+Villa Sunny Island
+Villa Liberty
+Villa Tranquil Sands
+Villa Nightfall
+Villa Sunbreeze
+Villa Bright Side
+Villa Sunlight
+Villa Coral Cay
+Villa Cape Supreme
+Villa Chamo
+Villa Secret Pearl
+Villa Blue Island
+Villa Blue Moon
+Villa Lifetime
+Villa Cozy Island
++ ------------------------------ + -------- + -------- + -------- + -------- + -------- + -------- + -------- +
+| Villa                          | Feb 2024 | Mar 2024 | Apr 2024 | May 2024 | Jun 2024 | Jul 2024 |  Average |
++ ------------------------------ + -------- + -------- + -------- + -------- + -------- + -------- + -------- +
+| Luxusvilla Caloo               |     37.9 |     38.7 |      0.0 |      0.0 |      6.7 |     83.9 |     27.9 |
+| Luxury Villa Madison Garden    |    100.0 |    100.0 |     63.3 |     35.5 |      0.0 |     16.1 |     52.5 |
+| Luxusvilla Horizon             |     27.6 |    100.0 |     86.7 |     12.9 |     23.3 |     38.7 |     48.2 |
+| Villa Next Generation          |    100.0 |    100.0 |      3.3 |      0.0 |      0.0 |      3.2 |     34.4 |
+| Villa River Pearl - direct riv |     96.6 |     74.2 |     16.7 |     29.0 |      3.3 |      0.0 |     36.6 |
+| Villa Infinity                 |     96.6 |    100.0 |     56.7 |      0.0 |      0.0 |     74.2 |     54.6 |
+| Villa Dakota                   |     82.8 |     87.1 |    100.0 |     87.1 |     56.7 |     64.5 |     79.7 |
+| Luxury Villa Silversands       |    100.0 |    100.0 |     83.3 |     64.5 |      6.7 |     77.4 |     72.0 |
+| Villa Athene                   |    100.0 |    100.0 |     86.7 |     41.9 |    100.0 |     96.8 |     87.6 |
+| Villa Lumina                   |    100.0 |    100.0 |     96.7 |     83.9 |     70.0 |     90.3 |     90.1 |
+| Villa Mayflower                |    100.0 |     96.8 |     53.3 |      0.0 |      0.0 |      0.0 |     41.7 |
+| Villa Genesis                  |    100.0 |     96.8 |     93.3 |      3.2 |      0.0 |      0.0 |     48.9 |
+| Villa Ruby Sunset              |    100.0 |     96.8 |     80.0 |     67.7 |     30.0 |     51.6 |     71.0 |
+| Villa Sweet Greta              |     79.3 |     77.4 |     60.0 |    100.0 |    100.0 |    100.0 |     86.1 |
+| Villa Summerwind               |    100.0 |     80.6 |     73.3 |      0.0 |      0.0 |     45.2 |     49.9 |
+| Villa Winking Owl - available  |      3.4 |      0.0 |      0.0 |      0.0 |      0.0 |      0.0 |      0.6 |
+| Villa Skyshine                 |     96.6 |     96.8 |     53.3 |     22.6 |      0.0 |      0.0 |     44.9 |
+| Villa Long Island              |    100.0 |    100.0 |     96.7 |     87.1 |     26.7 |     74.2 |     80.8 |
+| Villa Henderson                |      3.4 |     45.2 |      3.3 |     83.9 |     23.3 |     61.3 |     36.7 |
+| Villa Pura Vida                |    100.0 |    100.0 |     96.7 |     48.4 |      0.0 |     51.6 |     66.1 |
+| Villa Cape Royal               |    100.0 |    100.0 |    100.0 |     80.6 |      6.7 |     41.9 |     71.5 |
+| Villa Clifton Bay              |    100.0 |     74.2 |     90.0 |     51.6 |     23.3 |      3.2 |     57.1 |
+| Villa Neo                      |    100.0 |     96.8 |     83.3 |     80.6 |      0.0 |     48.4 |     68.2 |
+| Villa Hummingbird              |     93.1 |    100.0 |     93.3 |     58.1 |     70.0 |     61.3 |     79.3 |
+| Villa Pelican Bay              |    100.0 |     74.2 |    100.0 |     45.2 |      0.0 |     51.6 |     61.8 |
+| Villa White Shell              |    100.0 |     93.5 |     70.0 |    100.0 |     13.3 |     87.1 |     77.3 |
+| Villa Bon Voyage               |    100.0 |    100.0 |     66.7 |     54.8 |      0.0 |     41.9 |     60.6 |
+| Villa Sea Shell                |    100.0 |     90.3 |     86.7 |     54.8 |      0.0 |      6.5 |     56.4 |
+| Villa Maverick                 |     86.2 |    100.0 |     90.0 |     61.3 |      6.7 |     80.6 |     70.8 |
+| Villa Living Coral             |    100.0 |    100.0 |     83.3 |     41.9 |      0.0 |     80.6 |     67.7 |
+| Villa Royal Residence          |    100.0 |     90.3 |    100.0 |     74.2 |      0.0 |     67.7 |     72.0 |
+| Villa Bella Luna               |    100.0 |    100.0 |    100.0 |     83.9 |     40.0 |     83.9 |     84.6 |
+| Villa Pink Lemonade            |    100.0 |    100.0 |     90.0 |     90.3 |     23.3 |     22.6 |     71.0 |
+| Villa Whispering Palms         |    100.0 |    100.0 |     83.3 |     32.3 |     83.3 |     67.7 |     77.8 |
+| Villa Harbour View             |    100.0 |     96.8 |     46.7 |     67.7 |      0.0 |      0.0 |     51.9 |
+| Villa Next Level               |    100.0 |    100.0 |     70.0 |     80.6 |      0.0 |     38.7 |     64.9 |
+| Villa Aquamarine               |    100.0 |    100.0 |     70.0 |     90.3 |     46.7 |     71.0 |     79.7 |
+| Villa Sunshine                 |    100.0 |    100.0 |     63.3 |     25.8 |     83.3 |     51.6 |     70.7 |
+| Villa Sunny Island             |     93.1 |     93.5 |     93.3 |     25.8 |      0.0 |     58.1 |     60.6 |
+| Villa Liberty                  |    100.0 |    100.0 |     70.0 |     64.5 |      0.0 |      0.0 |     55.8 |
+| Villa Tranquil Sands           |    100.0 |     90.3 |     63.3 |     48.4 |      0.0 |      3.2 |     50.9 |
+| Villa Nightfall                |    100.0 |     96.8 |     60.0 |     87.1 |      0.0 |      0.0 |     57.3 |
+| Villa Sunbreeze                |     96.6 |    100.0 |     66.7 |     80.6 |     56.7 |    100.0 |     83.4 |
+| Villa Bright Side              |     93.1 |     90.3 |     66.7 |     54.8 |      0.0 |      0.0 |     50.8 |
+| Villa Sunlight                 |    100.0 |     96.8 |     60.0 |    100.0 |     43.3 |     51.6 |     75.3 |
+| Villa Coral Cay                |     96.6 |    100.0 |     70.0 |     83.9 |      0.0 |     48.4 |     66.5 |
+| Villa Cape Supreme             |     96.6 |    100.0 |     96.7 |    100.0 |      0.0 |     58.1 |     75.2 |
+| Villa Chamo                    |    100.0 |    100.0 |     76.7 |     96.8 |     60.0 |     45.2 |     79.8 |
+| Villa Secret Pearl             |    100.0 |    100.0 |    100.0 |     77.4 |     46.7 |     77.4 |     83.6 |
+| Villa Blue Island              |    100.0 |     96.8 |     36.7 |      0.0 |      0.0 |      3.2 |     39.4 |
+| Villa Blue Moon                |    100.0 |     96.8 |     73.3 |     77.4 |     10.0 |     64.5 |     70.3 |
+| Villa Lifetime                 |    100.0 |    100.0 |     93.3 |     96.8 |     36.7 |     83.9 |     85.1 |
+| Villa Cozy Island              |    100.0 |     96.8 |     86.7 |     96.8 |     43.3 |     29.0 |     75.4 |
++ ------------------------------ + -------- + -------- + -------- + -------- + -------- + -------- + -------- +
+--- Analyzing Intervillas ---
+Found 67 villas
+Bella Villa 141
+Hemingway by the Sea
+The Barefoot Oasis
+The Britannia Lake House
+Villa 8Lakes
+Villa Aguabella
+Villa Alica
+Villa Ambiente
+Villa Arte Vita
+Villa Aurora
+Villa Bayshore
+Villa Bella Vita
+Villa Bequia
+Villa Big Easy
+Villa Brightwater
+Villa Capricorn
+Villa Carpe Diem
+Villa Cataleya
+Villa Cayman
+Villa ChillOut
+Villa Coral Fairway
+Villa Coral Paradise
+Villa Cupio
+Villa Da Vinci
+Villa Edgewater
+Villa Emerald Coast
+Villa Esmeralda
+Villa Garzetta
+Villa Isabella
+Villa June
+Villa La Favorita
+Villa La Palmita
+Villa Lady Elsy
+Villa Laguna
+Villa Leonardo
+Villa Magic Summer
+Villa Malibu
+Villa Manatee
+Villa Montclaire
+Villa Napura
+Villa Oasis
+Villa Pearl of Paradise
+Villa Pure 22
+Villa Pure Balance
+Villa Riverside
+Villa Riviera
+Villa Royal's Paradise
+Villa Sea Turtle
+Villa Seaside Rendezvous
+Villa Serenity
+Villa Solaris at the Lake
+Villa South West
+Villa Splendid
+Villa Spreader Pearl
+Villa Starview
+Villa Sundown
+Villa Sunset Breeze
+Villa Sunset Paradise
+Villa The Diamond
+Villa The Keys
+Villa The Magnificence 1
+Villa The View
+Villa Tropicana
+Villa Venezia
+Villa Vibes
+Villa Victoria
+Villa White Style
++ ------------------------------ + -------- + -------- + -------- + -------- + -------- + -------- + -------- +
+| Villa                          | Mar 2024 | Apr 2024 | Mai 2024 | Jun 2024 | Jul 2024 | Aug 2024 |  Average |
++ ------------------------------ + -------- + -------- + -------- + -------- + -------- + -------- + -------- +
+| Bella Villa 141                |    100.0 |    100.0 |    100.0 |      0.0 |      0.0 |      0.0 |     50.0 |
+| Hemingway by the Sea           |    100.0 |     50.0 |     45.2 |     26.7 |     77.4 |      0.0 |     49.9 |
+| The Barefoot Oasis             |     96.8 |     70.0 |      0.0 |     46.7 |      0.0 |      0.0 |     35.6 |
+| The Britannia Lake House       |    100.0 |     43.3 |      0.0 |      0.0 |      0.0 |      0.0 |     23.9 |
+| Villa 8Lakes                   |    100.0 |     80.0 |     90.3 |      0.0 |     80.6 |     67.7 |     69.8 |
+| Villa Aguabella                |     51.6 |      0.0 |     58.1 |      0.0 |      0.0 |     51.6 |     26.9 |
+| Villa Alica                    |    100.0 |     70.0 |     38.7 |      0.0 |      0.0 |      0.0 |     34.8 |
+| Villa Ambiente                 |    100.0 |     53.3 |     41.9 |     26.7 |     38.7 |     45.2 |     51.0 |
+| Villa Arte Vita                |     90.3 |    100.0 |     71.0 |      0.0 |     35.5 |      0.0 |     49.5 |
+| Villa Aurora                   |    100.0 |    100.0 |    100.0 |    100.0 |    100.0 |    100.0 |    100.0 |
+| Villa Bayshore                 |     67.7 |     33.3 |     51.6 |     20.0 |     51.6 |     16.1 |     40.1 |
+| Villa Bella Vita               |    100.0 |    100.0 |    100.0 |    100.0 |    100.0 |    100.0 |    100.0 |
+| Villa Bequia                   |     87.1 |     80.0 |     71.0 |     80.0 |     67.7 |     58.1 |     74.0 |
+| Villa Big Easy                 |    100.0 |     43.3 |     48.4 |     76.7 |     38.7 |     12.9 |     53.3 |
+| Villa Brightwater              |    100.0 |     60.0 |     38.7 |      0.0 |      0.0 |      0.0 |     33.1 |
+| Villa Capricorn                |    100.0 |     70.0 |      0.0 |      0.0 |      0.0 |      0.0 |     28.3 |
+| Villa Carpe Diem               |    100.0 |      0.0 |     67.7 |      0.0 |      0.0 |      0.0 |     28.0 |
+| Villa Cataleya                 |    100.0 |    100.0 |     48.4 |      0.0 |     45.2 |     45.2 |     56.5 |
+| Villa Cayman                   |     87.1 |    100.0 |    100.0 |    100.0 |    100.0 |    100.0 |     97.8 |
+| Villa ChillOut                 |    100.0 |    100.0 |     71.0 |     26.7 |     51.6 |     48.4 |     66.3 |
+| Villa Coral Fairway            |    100.0 |    100.0 |      0.0 |      0.0 |      0.0 |      0.0 |     33.3 |
+| Villa Coral Paradise           |    100.0 |      0.0 |     61.3 |    100.0 |     90.3 |      0.0 |     58.6 |
+| Villa Cupio                    |    100.0 |    100.0 |     87.1 |      0.0 |     48.4 |     48.4 |     64.0 |
+| Villa Da Vinci                 |    100.0 |    100.0 |    100.0 |     90.0 |     58.1 |     45.2 |     82.2 |
+| Villa Edgewater                |    100.0 |     76.7 |    100.0 |      0.0 |      0.0 |      0.0 |     46.1 |
+| Villa Emerald Coast            |    100.0 |     43.3 |      0.0 |     40.0 |      0.0 |     32.3 |     35.9 |
+| Villa Esmeralda                |    100.0 |     83.3 |    100.0 |      6.7 |      0.0 |      0.0 |     48.3 |
+| Villa Garzetta                 |    100.0 |    100.0 |     96.8 |     63.3 |     54.8 |     45.2 |     76.7 |
+| Villa Isabella                 |    100.0 |     70.0 |     51.6 |      0.0 |      0.0 |     22.6 |     40.7 |
+| Villa June                     |     29.0 |     23.3 |     38.7 |      0.0 |     77.4 |     77.4 |     41.0 |
+| Villa La Favorita              |     90.3 |     86.7 |      0.0 |     70.0 |      0.0 |     48.4 |     49.2 |
+| Villa La Palmita               |    100.0 |      0.0 |     58.1 |      0.0 |      0.0 |      0.0 |     26.3 |
+| Villa Lady Elsy                |    100.0 |     66.7 |     48.4 |     70.0 |     93.5 |     64.5 |     73.9 |
+| Villa Laguna                   |     83.9 |     40.0 |     25.8 |      0.0 |     29.0 |     45.2 |     37.3 |
+| Villa Leonardo                 |    100.0 |    100.0 |    100.0 |     26.7 |     48.4 |      9.7 |     64.1 |
+| Villa Magic Summer             |     90.3 |    100.0 |      6.5 |      0.0 |     67.7 |      0.0 |     44.1 |
+| Villa Malibu                   |    100.0 |     66.7 |    100.0 |      0.0 |      0.0 |      0.0 |     44.4 |
+| Villa Manatee                  |     77.4 |     73.3 |    100.0 |     30.0 |     25.8 |     22.6 |     54.9 |
+| Villa Montclaire               |     74.2 |     76.7 |     38.7 |     70.0 |     67.7 |      0.0 |     54.6 |
+| Villa Napura                   |     80.6 |    100.0 |     41.9 |     66.7 |    100.0 |     25.8 |     69.2 |
+| Villa Oasis                    |    100.0 |     30.0 |      0.0 |      0.0 |      0.0 |     96.8 |     37.8 |
+| Villa Pearl of Paradise        |    100.0 |     43.3 |      0.0 |      0.0 |      0.0 |     22.6 |     27.7 |
+| Villa Pure 22                  |    100.0 |    100.0 |    100.0 |     40.0 |     25.8 |     61.3 |     71.2 |
+| Villa Pure Balance             |    100.0 |    100.0 |    100.0 |     43.3 |     87.1 |     48.4 |     79.8 |
+| Villa Riverside                |     64.5 |     16.7 |      0.0 |      0.0 |      0.0 |      0.0 |     13.5 |
+| Villa Riviera                  |    100.0 |     60.0 |    100.0 |    100.0 |     19.4 |      0.0 |     63.2 |
+| Villa Royal's Paradise         |     87.1 |     36.7 |      0.0 |     36.7 |    100.0 |    100.0 |     60.1 |
+| Villa Sea Turtle               |    100.0 |     63.3 |     87.1 |      3.3 |     25.8 |     54.8 |     55.7 |
+| Villa Seaside Rendezvous       |     96.8 |     40.0 |      0.0 |      0.0 |      0.0 |      0.0 |     22.8 |
+| Villa Serenity                 |    100.0 |     50.0 |     58.1 |      0.0 |     90.3 |    100.0 |     66.4 |
+| Villa Solaris at the Lake      |    100.0 |     60.0 |     32.3 |     56.7 |     29.0 |     67.7 |     57.6 |
+| Villa South West               |    100.0 |    100.0 |     12.9 |      0.0 |     58.1 |     54.8 |     54.3 |
+| Villa Splendid                 |    100.0 |     83.3 |     58.1 |      0.0 |     64.5 |      0.0 |     51.0 |
+| Villa Spreader Pearl           |    100.0 |     86.7 |     61.3 |      0.0 |     32.3 |      0.0 |     46.7 |
+| Villa Starview                 |     74.2 |     26.7 |      0.0 |      0.0 |      9.7 |     25.8 |     22.7 |
+| Villa Sundown                  |    100.0 |     90.0 |      0.0 |      0.0 |      0.0 |      0.0 |     31.7 |
+| Villa Sunset Breeze            |    100.0 |    100.0 |    100.0 |     50.0 |      0.0 |      0.0 |     58.3 |
+| Villa Sunset Paradise          |     74.2 |      0.0 |     96.8 |    100.0 |     32.3 |      0.0 |     50.5 |
+| Villa The Diamond              |    100.0 |    100.0 |    100.0 |      6.7 |      0.0 |      0.0 |     51.1 |
+| Villa The Keys                 |    100.0 |    100.0 |    100.0 |    100.0 |    100.0 |     83.9 |     97.3 |
+| Villa The Magnificence 1       |    100.0 |    100.0 |     61.3 |     36.7 |     58.1 |     29.0 |     64.2 |
+| Villa The View                 |    100.0 |     90.0 |     71.0 |     26.7 |     35.5 |     45.2 |     61.4 |
+| Villa Tropicana                |     77.4 |     20.0 |      0.0 |      0.0 |      0.0 |      0.0 |     16.2 |
+| Villa Venezia                  |     96.8 |    100.0 |     51.6 |      0.0 |      0.0 |      0.0 |     41.4 |
+| Villa Vibes                    |    100.0 |     86.7 |      0.0 |      0.0 |      0.0 |      0.0 |     31.1 |
+| Villa Victoria                 |    100.0 |    100.0 |     41.9 |      0.0 |      0.0 |      0.0 |     40.3 |
+| Villa White Style              |    100.0 |     80.0 |    100.0 |    100.0 |     96.8 |     25.8 |     83.8 |
++ ------------------------------ + -------- + -------- + -------- + -------- + -------- + -------- + -------- +
+Storing data to file
+
+Process finished with exit code 0
