@@ -81,17 +81,15 @@ def print_availability_results(villas: list[dict]) -> None:
                 if data["month_name"] == month:
                     if 'percentage_blocked' in data:
                         val = round(data["percentage_blocked"], 1)
-                        villa_line += " {:>14.1f} |".format(val)
+                        villa_line += " {:>8.1f} |".format(val)
                     else:
-                        villa_line += " {:>14} |".format('-')
+                        villa_line += " {:>8} |".format('-')
                     break
             else:
                 # month is not present
-                villa_line += " {:>14} |".format('+')  # If data for the
+                villa_line += " {:>8} |".format('+')  # If data for the
         # print average percentage blocked for the villa
-        villa_line += " {:>14.1f} |".format(villa["average_percentage_blocked"])
+        villa_line += " {:>8.1f} |".format(villa["average_percentage_blocked"])
         print(villa_line)
 
     print(sep_line)
-
-
