@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from src.villa_availabitlity.common import get_month_days, \
-    calculate_percentage_blocked
+    calculate_percentage_blocked, get_month_abbr
 
 
 def get_available_and_blocked_days(url) -> tuple[str, int]:
@@ -13,16 +13,14 @@ def get_available_and_blocked_days(url) -> tuple[str, int]:
 
     calendar_wrapper = soup.find(id='fwre-item-calendar-wrapper')
     for month in calendar_wrapper.find_all('table'):
-        month_str = month.find('th').text
-        total_days_month = get_month_days(month_str.split(' ')[1],
-                                          month_str.split(' ')[0])
+        month_str_split = (month.find('th').text.
+                           split(' '))  # e.g. ['January', '2021']
+        month_str = (get_month_abbr(month_str_split[0]) +
+                     ' ' + month_str_split[1])
         booked_days_elements = month.find_all(class_='fwre-booking-active')
         checkin_days_elements = month.find_all(class_='checkin')
-        checkout_days_elements = month.find_all(class_='checkout')
-        available_days_elements = month.find_all('td', class_=None)
         blocked_days = (len(booked_days_elements) +
-                        len(checkin_days_elements)) # +
-                        # len(checkout_days_elements)
+                        len(checkin_days_elements))
 
         yield month_str, blocked_days
 

@@ -28,6 +28,18 @@ def get_month_days(year: Union[int, str], month: Union[int, str]) -> int:
     return last_day
 
 
+def get_month_abbr(full_month_name: str) -> str:
+    """
+    This function takes a full month name as a string and returns its
+    abbreviation.
+
+    full_month_name (str): The full name of the month (e.g., 'January').
+    Returns str: The abbreviated name of the month (e.g., 'Jan').
+    """
+    month_number = list(calendar.month_name).index(full_month_name.capitalize())
+    return calendar.month_abbr[month_number]
+
+
 def calculate_percentage_blocked(blocked_days: int, total_days: int) -> float:
     return (blocked_days / total_days) * 100
 
@@ -52,10 +64,10 @@ def print_availability_results(villas: list[dict]) -> None:
     header = "| {:<30} |".format('Villa')
     sep_line = "+ {:<30} +".format('-' * 30)
     for month in unique_months:
-        header += " {:>14} |".format(month)
-        sep_line += " {:>14} +".format('-' * 14)
-    header += " {:>14} |".format('Average')
-    sep_line += " {:>14} +".format('-' * 14)
+        header += " {:>8} |".format(month)
+        sep_line += " {:>8} +".format('-' * 8)
+    header += " {:>8} |".format('Average')
+    sep_line += " {:>8} +".format('-' * 8)
 
     print(sep_line)
     print(header)
