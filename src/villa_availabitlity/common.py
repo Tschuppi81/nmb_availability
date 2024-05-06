@@ -3,6 +3,13 @@ from typing import Union
 
 
 def get_month_days(year: Union[int, str], month: Union[int, str]) -> int:
+    """ `Month` as well as `year` can be either a string or an integer.
+    Supported are months as integers (1-12) or as strings (e.g., 'jan',
+    'feb', 'mar', ...) in English or German e.g. 'okt'.
+    Returns the number of days in the month.
+
+    """
+
     month_map = {
         'jan': 1,
         'feb': 2,
@@ -14,8 +21,10 @@ def get_month_days(year: Union[int, str], month: Union[int, str]) -> int:
         'jul': 7,
         'aug': 8,
         'sep': 9,
+        'okt': 10,
         'oct': 10,
         'nov': 11,
+        'dez': 12,
         'dec': 12,
     }
     if isinstance(month, str):
