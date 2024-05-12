@@ -1,0 +1,21 @@
+# Features and Bugs
+2/ write initial explanation for the data printed
+'NMB percentage booked'
+
+3/ store (latest) data in order to compare high season only.
+print data for high season or low season for better comparison
+low: may - nov
+high: dec - apr
+
+4/ print average over all villas, average per month per agency
+
+6/ Draw a graph of the data
+A line for each villa over e.g. 6 months (x-axis). On the y-axis the number of
+days booked.
+
+# Done / Implemented
+1/ Calc average blocked for 6 month
+
+5/ Improvement: Shorten month names in the printout and make columns less wide
+Also less wide villa names, fit printout to one portrait page
+
