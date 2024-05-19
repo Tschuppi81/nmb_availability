@@ -1,5 +1,6 @@
 import calendar
 import json
+import os
 from datetime import datetime
 
 import matplotlib.pyplot as plt
@@ -66,9 +67,17 @@ def store_villa_data(villas, label):
 
 
 def load_villa_data(label):
-    filename = f'../../data/villas_{label}.json'
-    with open(filename, 'r') as f:
+    # filename = f'../../data/villas_{label}.json'
+    dirname = f'../../data'
+
+    files = os.listdir(dirname)
+    files = [f for f in files if f.endswith('.json') and label in f]
+    files.sort()
+    filename = files[-1]
+
+    with open(os.path.join(dirname, filename), 'r') as f:
         return json.load(f)
+
 
 
 def sort_villa_data(villas):
@@ -105,8 +114,6 @@ def print_availability_results(villas: list[dict]) -> None:
     print(header)
     print(sep_line)
 
-    # TODO: sort print out
-
     # Print villa blocked days for each month
     for villa in villas:
         villa_line = "| {:<30} |".format(villa["name"][:30])
@@ -131,7 +138,7 @@ def print_availability_results(villas: list[dict]) -> None:
 
 def draw_availability_graph(villas: list[dict], filename='') -> None:
     font_size = 8
-    
+
     villas = sort_villa_data(villas)
 
     months = [month['month_name'] for month in villas[0]['months']]
@@ -143,7 +150,6 @@ def draw_availability_graph(villas: list[dict], filename='') -> None:
     plt.xticks(rotation=30)
     plt.ylabel('Booked Days', fontsize=font_size)
     plt.title('Booked Days for Each Villa Over Months')
-    # plt.legend(loc=(1.05, .7), fontsize=font_size)
     plt.legend(loc=(1.03, 0), fontsize=font_size)
     plt.tight_layout()
 
