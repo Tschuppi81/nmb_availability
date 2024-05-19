@@ -26,4 +26,4 @@ if __name__ == "__main__":
 
     intervillas = load_villa_data('intervillas')
     print_availability_results(intervillas)
-    draw_availability_graph(villas, f'../../plots/{today}_intervillas.png')
+    draw_availability_graph(intervillas, f'../../plots/{today}_intervillas.png')
