@@ -1,4 +1,9 @@
 import calendar
+import json
+from datetime import datetime
+
+import matplotlib.pyplot as plt
+
 from typing import Union
 
 
@@ -53,6 +58,19 @@ def calculate_percentage_blocked(blocked_days: int, total_days: int) -> float:
     return (blocked_days / total_days) * 100
 
 
+def store_villa_data(villas, label):
+    today = datetime.today().strftime('%Y%m%d')
+    filename = f'../../data/{today}_{label}.json'
+    with open(filename, 'w') as f:
+        json.dump(villas, f, indent=4)
+
+
+def load_villa_data(label):
+    filename = f'../../data/villas_{label}.json'
+    with open(filename, 'r') as f:
+        return json.load(f)
+
+
 def print_availability_results(villas: list[dict]) -> None:
     """
     Print the availability results. The format is like the following:
@@ -82,6 +100,8 @@ def print_availability_results(villas: list[dict]) -> None:
     print(header)
     print(sep_line)
 
+    # TODO: sort print out
+
     # Print villa blocked days for each month
     for villa in villas:
         villa_line = "| {:<30} |".format(villa["name"][:30])
@@ -102,3 +122,25 @@ def print_availability_results(villas: list[dict]) -> None:
         print(villa_line)
 
     print(sep_line)
+
+
+def draw_availability_graph(villas: list[dict], filename='') -> None:
+    font_size = 8
+
+    months = [month['month_name'] for month in villas[0]['months']]
+    for villa in villas:
+        booked_days = [month['blocked_days'] for month in villa['months']]
+        plt.plot(months, booked_days, label=villa['name'][:25])
+
+    plt.xlabel('Months', fontsize=font_size)
+    plt.xticks(rotation=30)
+    plt.ylabel('Booked Days', fontsize=font_size)
+    plt.title('Booked Days for Each Villa Over Months')
+    # plt.legend(loc=(1.05, .7), fontsize=font_size)
+    plt.legend(loc=(1.03, 0), fontsize=font_size)
+    plt.tight_layout()
+
+    if filename:
+        plt.savefig(filename, bbox_inches='tight', dpi=300)
+
+    plt.show()
