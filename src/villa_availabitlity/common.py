@@ -71,6 +71,10 @@ def load_villa_data(label):
         return json.load(f)
 
 
+def sort_villa_data(villas):
+    return sorted(villas, key=lambda v: v['name'])
+
+
 def print_availability_results(villas: list[dict]) -> None:
     """
     Print the availability results. The format is like the following:
@@ -79,6 +83,7 @@ def print_availability_results(villas: list[dict]) -> None:
     # villa  2   |         |         | ..
     # ..         |         |         | ..
     """
+    villas = sort_villa_data(villas)
 
     # Get unique months
     unique_months = list()
@@ -126,6 +131,8 @@ def print_availability_results(villas: list[dict]) -> None:
 
 def draw_availability_graph(villas: list[dict], filename='') -> None:
     font_size = 8
+    
+    villas = sort_villa_data(villas)
 
     months = [month['month_name'] for month in villas[0]['months']]
     for villa in villas:
