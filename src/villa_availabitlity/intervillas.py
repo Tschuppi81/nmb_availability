@@ -55,7 +55,7 @@ def get_available_and_blocked_days_intervillas(url) -> tuple[str, int]:
         EC.presence_of_element_located((By.CLASS_NAME, 'date'))
     )
 
-    for _ in range(6):
+    for _ in range(6):  # for the next number of months
         # button next month
         button_next_month = driver.find_element(By.CLASS_NAME, 'ml-1')
 

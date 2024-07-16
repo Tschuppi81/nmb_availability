@@ -72,6 +72,9 @@ def load_villa_data(label):
 
     files = os.listdir(dirname)
     files = [f for f in files if f.endswith('.json') and label in f]
+    if not files:
+        return {}
+
     files.sort()
     filename = files[-1]
 
@@ -92,6 +95,9 @@ def print_availability_results(villas: list[dict]) -> None:
     # villa  2   |         |         | ..
     # ..         |         |         | ..
     """
+    if not villas:
+        return None
+
     villas = sort_villa_data(villas)
 
     # Get unique months
@@ -138,6 +144,9 @@ def print_availability_results(villas: list[dict]) -> None:
 
 def draw_availability_graph(villas: list[dict], filename='') -> None:
     font_size = 8
+
+    if not villas:
+        return None
 
     villas = sort_villa_data(villas)
 
