@@ -1,10 +1,10 @@
 from datetime import datetime
 
-from src.villa_availabitlity.common import print_availability_results, \
-    draw_availability_graph, store_villa_data, load_villa_data
+from src.t_menu.menu import Menu
+from src.villa_availabitlity.common import (draw_availability_graph, store_villa_data, load_villa_data,
+                                            print_availability_results)
 from src.villa_availabitlity.intervillas import scrape_intervillas
 from src.villa_availabitlity.nmb import scrape_nmb
-from src.villa_availabitlity.t_menu import Menu
 
 today = datetime.today().strftime('%Y%m%d')
 

@@ -1,10 +1,10 @@
 from unittest.mock import Mock
 
-from src.villa_availabitlity.t_menu import Menu
+from src.t_menu.menu import Menu
 
 
 def test_single_menu(capsys, monkeypatch):
-    monkeypatch.setattr('builtins.input', lambda _: 1)
+    monkeypatch.setattr('builtins.input', lambda _: '1')
 
     the_function = Mock()
 
@@ -41,7 +41,9 @@ def test_two_main_menus(capsys, monkeypatch):
     out, err = capsys.readouterr()
     assert main_title in out
     assert main_1_tile in out
+    assert m1.id in out
     assert main_2_tile in out
+    assert m2.id in out
 
     m1_function.assert_not_called()
     m2_function.assert_called_once()
@@ -49,8 +51,8 @@ def test_two_main_menus(capsys, monkeypatch):
 
 def test_with_sub_menu(capsys, monkeypatch):
     def inputs():
-        yield '2'
-        yield '21'
+        yield '2'  # Select 'Main 2'
+        yield '21'  # Select 'Sub 21'
 
     user_inputs = inputs()
     monkeypatch.setattr('builtins.input', lambda _: next(user_inputs))
@@ -87,10 +89,15 @@ def test_with_sub_menu(capsys, monkeypatch):
     out, err = capsys.readouterr()
     assert main_title in out
     assert main1_tile in out
+    assert m1.id in out
     assert main2_title in out
+    assert m2.id in out
     assert sub11_title not in out
+    assert s11.id not in out
     assert sub21_title in out
+    assert s21.id in out
     assert sub22_title in out
+    assert s22.id in out
 
     m11_function.assert_not_called()
     m22_function.assert_not_called()

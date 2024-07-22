@@ -2,7 +2,7 @@
 class Menu:
 
     def __init__(self, id: int | str, title, function=None):
-        self.id = id.lower() if isinstance(id, str) else id
+        self.id: str = str(id).lower()
         self.title = title
         self.function = function
         self.sub_menus = []
@@ -23,7 +23,7 @@ class Menu:
 
     def _wait_for_user(self):
         choice = input('Your choice: ')
-        choice = int(choice) if choice.isdigit() else choice.lower()
+        choice = choice.lower()
 
         ids = [m.id for m in self.sub_menus]
         ids.append(self.id)
